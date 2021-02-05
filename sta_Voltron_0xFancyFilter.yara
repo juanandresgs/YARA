@@ -7,7 +7,7 @@ rule sta_Voltron_0xFancyFilter_broad
 		desc = "Experimental approaches to detecting 0xFancyFilter features"
 		author = "JAG-S"
 		canary = "passed"
-		version = "3"
+		version = "4"
 		hash1 = "ef35705696d78cc9f4de6adad2cbe5ed22fd50da0ce4180c1d47cf0536aebc87"
 		hash2 = "df4bc387181ffaabe0be39e66ef5eb838ed638e0ae2b82e9a7daa83647e38bb1"
 		hash3 = "cd3ee807e349abae65d93e421176f302528b739e9e1d77a6ce4e57caeec91b4e"
@@ -91,7 +91,7 @@ rule sta_Voltron_0xFancyFilter_broad
 			or
 			for any i in (0..pe.number_of_resources - 1):
 			(
-				pe.resources[i].type_string == "X"
+				pe.resources[i].type_string == "X\x00"
 				and
 				pe.resources[i].language == 1033
 			)
