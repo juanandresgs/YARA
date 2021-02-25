@@ -7,7 +7,8 @@ rule sta_Voltron_0xFancyFilter_broad
 		desc = "Experimental approaches to detecting 0xFancyFilter features"
 		author = "JAG-S"
 		canary = "passed"
-		version = "4"
+		version = "5"
+		last_modified = "02.25.2021"
 		hash1 = "ef35705696d78cc9f4de6adad2cbe5ed22fd50da0ce4180c1d47cf0536aebc87"
 		hash2 = "df4bc387181ffaabe0be39e66ef5eb838ed638e0ae2b82e9a7daa83647e38bb1"
 		hash3 = "cd3ee807e349abae65d93e421176f302528b739e9e1d77a6ce4e57caeec91b4e"
@@ -89,12 +90,14 @@ rule sta_Voltron_0xFancyFilter_broad
 			or
 			pe.rich_signature.clear_data == "DanS\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xc3\x0f`\x00\x01\x00\x00\x00{\x1c\x0c\x00\x02\x00\x00\x00\xc3\x0f\x0f\x00\x02\x00\x00\x00\xc3\x0f_\x00\x09\x00\x00\x00\x00\x00\x01\x00\xa1\x00\x00\x00\xc3\x0f]\x00\x11\x00\x00\x00\xfa#@\x00\x01\x00\x00\x00\x09x\x8a\x00\x16\x00\x00\x00\x09x\x92\x00\x01\x00\x00\x00\x1eR\x94\x00\x01\x00\x00\x00\x09x\x91\x00\x01\x00\x00\x00"
 			or
+			/*
 			for any i in (0..pe.number_of_resources - 1):
 			(
 				pe.resources[i].type_string == "X\x00"
 				and
 				pe.resources[i].language == 1033
 			)
+			*/ // Interesting feature but it does FP.
 			or
 			pe.imphash() == "e4f7691d7707944196d03353d13b963e"
 			or
