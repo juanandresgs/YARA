@@ -97,8 +97,8 @@ rule sta_Voltron_0xFancyFilter_broad
 				and
 				pe.resources[i].language == 1033
 			)
-			*/ // Interesting feature but it does FP.
-			or
+			 // Interesting feature but it does FP.
+			or*/
 			pe.imphash() == "e4f7691d7707944196d03353d13b963e"
 			or
 			pe.version_info["FileDescription"] contains "Microsoft (R) html:"
